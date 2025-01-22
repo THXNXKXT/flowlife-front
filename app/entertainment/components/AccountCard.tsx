@@ -43,7 +43,6 @@ export default function AccountCard({
   const [isVisible, setIsVisible] = useState(false);
 
   const endDate = safeDateParser(account.endDate);
-  const realStartDate = safeDateParser(account.realStartDate);
   const isExpired = endDate ? endDate < new Date() : false;
   const platformType = getPlatformType(account.platform);
 

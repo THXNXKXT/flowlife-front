@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import type { ProductType, AccountType } from "@/types/product";
 import AccountCard from "./AccountCard";
 import AccountDetails from "./AccountDetails";
+import Image from "next/image";
 
 export default function ProductList({
   products = [],
@@ -48,10 +49,13 @@ export default function ProductList({
             onClick={() => setSelectedProduct(product)}
           >
             <div className="flex items-center gap-4">
-              <img
+              <Image
                 src={product.logoImage}
                 alt={product.name}
-                className="w-12 h-12 object-contain"
+                width={48} // ตรงกับ w-12 (12 * 4 = 48px)
+                height={48} // ตรงกับ h-12
+                className="object-contain"
+                loader={({ src }) => src} // จำเป็นถ้าใช้ external URL
               />
               <div>
                 <h2 className="font-semibold text-gray-800">{product.name}</h2>

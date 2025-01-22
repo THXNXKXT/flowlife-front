@@ -62,6 +62,7 @@ export default function AccountDetails({
       setCopiedField(fieldName);
       setTimeout(() => setCopiedField(null), 1500);
     } catch (err) {
+      console.error(err);
       alert("ไม่สามารถคัดลอกได้ กรุณาลองอีกครั้ง");
     }
   };
